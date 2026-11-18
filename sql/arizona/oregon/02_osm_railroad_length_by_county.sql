@@ -1,20 +1,6 @@
 -- Query 2: Railroad Length by County
--- Purpose: Calculate the total length of railroads in each county
-
--- Requirements:
--- - Use adminareas_a for counties (fclass = 'admin_level6')
--- - Use landuse_a for parks (fclass = 'park')
--- - Use ST_Intersects to join parks to counties
--- - Use ST_Intersection to clip park geometries to county boundaries
--- - Use ST_Area(geom::geography) for accurate measurements on WGS84
--- - Convert square meters to square kilometers (divide by 1,000,000)
--- - Group results by county name
--- - Include geom column for spatial visualization
-
--- Expected Output:
--- - county_name
--- - park_area_sq_km
--- - geom
+-- Purpose: Calculate the total length of railroads in each county in Oregon including rialways, light rail lines,
+-- and tram lines. 
 
 SELECT
     aa.name AS county_name,
