@@ -8,11 +8,11 @@ SELECT
     aa.geom
 FROM
     adminareas_a AS aa
-JOIN
+LEFT JOIN
     railways AS r ON ST_Intersects(aa.geom, r.geom)
+    AND r.fclass IN('rail','light_rail','tram')
 WHERE
     aa.fclass = 'admin_level6'
-    AND r.fclass IN('rail','light_rail','tram')
 GROUP BY
     aa.name, aa.geom
 ORDER BY
