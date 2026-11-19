@@ -1,25 +1,5 @@
--- Query 4: Railway Density by County
--- Purpose: Calculate railway density (km per sq km) in each county
-
--- Requirements:
--- - Use adminareas_a for counties (fclass = 'admin_level6')
--- - Use railways for line features
--- - Use ST_Intersects to match railways to counties
--- - Use ST_Intersection to clip railway segments to county boundaries
--- - Use ST_Length(geom::geography) for accurate railway lengths
--- - Convert meters to kilometers (divide by 1,000)
--- - Use ST_Area(geom::geography) for county area
--- - Convert square meters to square kilometers (divide by 1,000,000)
--- - Use a CTE to calculate intermediate metrics
--- - Calculate railway density = total_rail_length_km / county_area_sq_km
--- - Order results by railway density (highest first)
-
--- Expected Output:
--- - county_name
--- - total_rail_length_km
--- - county_area_sq_km
--- - rail_density_km_per_sq_km
--- - geom
+-- Query 4: Library Density by County
+-- Purpose: Calculate library density (libraries per sq km) in each county
 
 
 WITH county_metrics AS (
